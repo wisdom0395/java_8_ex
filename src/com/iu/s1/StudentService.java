@@ -57,4 +57,29 @@ public class StudentService {
 		
 		
 	}
+	
+	//3. 학생 조회
+	//search 메서드명
+	//번호를 입력 받아서 학생 한명을 찾아서
+	//해당 출력은 StudentView 클래스의 viewStudent 메서드만들어서 출력하자.
+	//
+	public void search(Student [] students) {
+		Scanner sc = new Scanner(System.in);
+		//학생의 번호를 입력 받습니다.
+		System.out.println("조회할 학생의 번호를 입력하세요");
+		int select = sc.nextInt();
+		boolean pleg = true;
+		
+		for(int i=0;i<students.length;i++) {
+			if(select==i) 
+			{
+				System.out.println(students[i]);
+				pleg = false;
+			}
+			else if(pleg) 
+			{
+				System.out.println("해당번호와 일치하는 학생이 없습니다.");
+			}
+		}//for
+	}
 }
